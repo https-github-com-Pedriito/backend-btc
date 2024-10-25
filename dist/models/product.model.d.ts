@@ -5,7 +5,7 @@ export declare class Product extends Entity {
     price?: number;
     imageUrl?: string;
     Description?: string;
-    options?: string;
+    options?: string[];
     subCategoryId: string;
     constructor(data?: Partial<Product>);
 }

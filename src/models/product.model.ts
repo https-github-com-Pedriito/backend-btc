@@ -32,9 +32,10 @@ export class Product extends Entity {
   Description?: string;
 
   @property({
-    type: 'string',
+    type: 'array',
+    itemType: 'string',
   })
-  options?: string;
+  options?: string[];
 
   @belongsTo(() => SubCategory)
   subCategoryId: string;

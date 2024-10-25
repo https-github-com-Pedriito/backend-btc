@@ -45,9 +45,10 @@ tslib_1.__decorate([
 ], Product.prototype, "Description", void 0);
 tslib_1.__decorate([
     (0, repository_1.property)({
-        type: 'string',
+        type: 'array',
+        itemType: 'string',
     }),
-    tslib_1.__metadata("design:type", String)
+    tslib_1.__metadata("design:type", Array)
 ], Product.prototype, "options", void 0);
 tslib_1.__decorate([
     (0, repository_1.belongsTo)(() => sub_category_model_1.SubCategory),
