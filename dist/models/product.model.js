@@ -51,6 +51,13 @@ tslib_1.__decorate([
     tslib_1.__metadata("design:type", Array)
 ], Product.prototype, "options", void 0);
 tslib_1.__decorate([
+    (0, repository_1.property)({
+        type: 'array',
+        itemType: 'string'
+    }),
+    tslib_1.__metadata("design:type", Array)
+], Product.prototype, "allergenes", void 0);
+tslib_1.__decorate([
     (0, repository_1.belongsTo)(() => sub_category_model_1.SubCategory),
     tslib_1.__metadata("design:type", String)
 ], Product.prototype, "subCategoryId", void 0);

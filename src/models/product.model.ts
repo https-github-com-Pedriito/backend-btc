@@ -37,6 +37,13 @@ export class Product extends Entity {
   })
   options?: string[];
 
+  @property({
+    type: 'array',
+    itemType:'string'
+
+  })
+  allergenes?:string[];
+
   @belongsTo(() => SubCategory)
   subCategoryId: string;
 
