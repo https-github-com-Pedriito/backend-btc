@@ -148,17 +148,5 @@ const uploadsDir = path.join(__dirname, 'apple-developer-merchantid-domain-assoc
         res.setHeader('Content-Type', 'text/plain');
       },
     });
-
-    // Ajout d'un log pour vérifier si le middleware est bien exécuté
-    expressApp.get('/.well-known/*', (req: express.Request, res: express.Response) => {
-      console.log('Request received for', req.originalUrl);
-      res.sendStatus(200);
-    });
-
-
-
-
-
-    
   }
 }
