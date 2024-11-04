@@ -1,6 +1,11 @@
 import { ApplicationConfig } from '@loopback/core';
 import { RestApplication } from '@loopback/rest';
 import 'dotenv/config';
+declare module 'http' {
+    interface IncomingMessage {
+        rawBody?: string;
+    }
+}
 export { ApplicationConfig };
 declare const BackendApplication_base: (new (...args: any[]) => {
     projectRoot: string;
