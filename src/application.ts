@@ -9,9 +9,12 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
-import 'dotenv/config';
-import express from 'express';
-import { IncomingMessage } from 'http';
+import express, { Request, Response } from 'express';
+const nodemailer = require("nodemailer");
+import 'dotenv/config'
+import stripePackage from 'stripe';
+
+require('dotenv').config();
 
 declare module 'http' {
   interface IncomingMessage {
@@ -19,7 +22,11 @@ declare module 'http' {
   }
 }
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+if (!stripeSecretKey) {
+  throw new Error('STRIPE_SECRET_KEY is not defined');
+}
+const stripe = new stripePackage(stripeSecretKey);
 
 export {ApplicationConfig};
 
@@ -31,13 +38,14 @@ export class BackendApplication extends BootMixin(
 
     // Set up CORS 
     this.bind('rest.cors:options').to({
-      origin: 'localhost:5173', // Remplacez '*' par votre domaine de frontend en production
+      origin: '*',
+      // Remplace '*' par ton domaine frontend en production
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       preflightContinue: false,
       optionsSuccessStatus: 204,
     });
 
-    // Set up the custom sequence
+    // Set up custom sequence
     this.sequence(MySequence);
 
     // Set up default home page
@@ -60,14 +68,12 @@ export class BackendApplication extends BootMixin(
 
     // Configure Express for Stripe
     const expressApp = express();
-    
     expressApp.use(express.json());
-    
 
     // Define Stripe-related routes
-    expressApp.post('/create-payment-intent', async (req, res) => {
-      const { amount } = req.body; // Récupérez amount depuis le corps de la requête
-      let orderAmount = amount || 1400; // Utilisez amount ou une valeur par défaut
+    expressApp.post('/create-payment-intent', async (req: Request, res: Response) => {
+      const { amount } = req.body;
+      const orderAmount = amount || 1400;
     
       try {
         const paymentIntent = await stripe.paymentIntents.create({
@@ -76,39 +82,51 @@ export class BackendApplication extends BootMixin(
           automatic_payment_methods: { enabled: true },
         });
     
-        res.send({
-          clientSecret: paymentIntent.client_secret,
-        });
+        res.send({ clientSecret: paymentIntent.client_secret });
       } catch (error) {
-        res.status(400).send({
-          error: {
-            message: error.message,
-          },
-        });
+        res.status(400).send({ error: { message: error.message } });
       }
     });
 
-
-    expressApp.get('/stripe-key', (req, res) => {
-      if (!process.env.STRIPE_PUBLISHABLE_KEY) {
+    expressApp.get('/stripe-key', (req: Request, res: Response) => {
+      const publishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
+      if (!publishableKey) {
         return res.status(500).json({ error: 'Stripe publishable key not configured.' });
       }
-      res.json({ publishableKey: process.env.STRIPE_PUBLISHABLE_KEY });
+      res.json({ publishableKey });
     });
 
-
-    // **Nouvel endpoint pour récupérer la clé publique Stripe**
-    expressApp.get('/stripe-key', (req, res) => {
-      res.send({
-        publishableKey: process.env.STRIPE_PUBLIC_KEY,
-      });
+    // Endpoint for sending emails with Nodemailer
+    expressApp.post('/send-email', async (req: Request, res: Response) => {
+      const { to, subject, text } = req.body;
+    
+      try {
+        const transporter = nodemailer.createTransport({
+          host: 'smtp.gmail.com',
+          port: 465,
+          secure: false,
+          auth: {
+            user: process.env.GMAIL_ADDRESS,
+            pass: process.env.GMAIL_PASSWORD,
+          },
+        });
+    
+        await transporter.sendMail({
+          from: process.env.GMAIL_ADDRESS,
+          to,
+          subject,
+          text,
+        });
+    
+        res.status(200).json({ message: 'Email envoyé avec succès' });
+      } catch (error) {
+        res.status(500).json({ message: 'Erreur lors de l\'envoi de l\'email', error });
+      }
     });
 
     // Mount Express app into LoopBack
     this.expressMiddleware('middleware.express', expressApp, {
       injectConfiguration: false,
     });
-
-    // Mount apple pay file
   }
 }

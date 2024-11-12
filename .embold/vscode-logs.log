@@ -75,3 +75,148 @@ OpenJDK 64-Bit Server VM (build 19.0.2+7-44, mixed mode, sharing)
 2024-11-04 12:47:41 info: Row(s) deleted
 2024-11-04 12:47:44 info: Row(s) deleted
 2024-11-04 12:47:45 info: Row(s) deleted
+2024-11-11 14:50:26 info: Congratulations, your extension "Embold" is now active!
+2024-11-11 14:50:26 info: tempDirectory : /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/temp
+2024-11-11 14:50:48 info: Extraction complete for source: /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/resources/embold-scanner-archive.zip, destination: /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/temp
+2024-11-11 14:50:48 info: Extension installed on machine OS : darwin
+2024-11-11 14:50:48 info: Fetched the issues from DB
+2024-11-11 14:50:48 info: Embold extension version response:{"hasSupport":false,"version":"0.1.6","changeNotes":"<div> <p>Release Date: 09 Oct, 2023 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2024-11-11 14:50:48 info: Current installed embold extension version : 0.1.8
+2024-11-11 14:50:48 info: Latest embold extension version on marketplace : 0.1.6
+2024-11-11 14:50:48 info: Java version installed on machine : 
+openjdk version "19.0.2" 2023-01-17
+OpenJDK Runtime Environment (build 19.0.2+7-44)
+OpenJDK 64-Bit Server VM (build 19.0.2+7-44, mixed mode, sharing)
+
+2024-11-11 14:50:48 info: Java installed on machine.
+2024-11-11 14:51:22 info: Row(s) deleted
+2024-11-11 14:51:22 info: Row(s) deleted
+2024-11-11 14:51:22 info: Row(s) deleted
+2024-11-11 14:51:24 info: Row(s) deleted
+2024-11-11 14:51:24 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:45 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 14:52:46 info: Row(s) deleted
+2024-11-11 15:02:47 info: Row(s) deleted
+2024-11-11 15:02:47 info: Row(s) deleted
+2024-11-11 15:07:24 info: Row(s) deleted
+2024-11-11 15:07:24 info: Row(s) deleted
+2024-11-11 15:10:29 info: Row(s) deleted
+2024-11-11 15:10:29 info: Row(s) deleted
+2024-11-11 15:14:05 info: Row(s) deleted
+2024-11-11 15:14:05 info: Row(s) deleted
+2024-11-11 15:19:10 info: Row(s) deleted
+2024-11-11 15:19:10 info: Row(s) deleted
+2024-11-11 15:25:49 info: Row(s) deleted
+2024-11-11 15:25:49 info: Row(s) deleted
+2024-11-11 15:28:39 info: Row(s) deleted
+2024-11-11 15:28:39 info: Row(s) deleted
+2024-11-12 14:53:17 info: Congratulations, your extension "Embold" is now active!
+2024-11-12 14:53:17 info: tempDirectory : /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/temp
+2024-11-12 14:53:20 info: Extraction complete for source: /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/resources/embold-scanner-archive.zip, destination: /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/temp
+2024-11-12 14:53:20 info: Extension installed on machine OS : darwin
+2024-11-12 14:53:20 info: Fetched the issues from DB
+2024-11-12 14:53:26 info: Java version installed on machine : 
+openjdk version "19.0.2" 2023-01-17
+OpenJDK Runtime Environment (build 19.0.2+7-44)
+OpenJDK 64-Bit Server VM (build 19.0.2+7-44, mixed mode, sharing)
+
+2024-11-12 14:53:26 info: Java installed on machine.
+2024-11-12 14:53:26 info: Embold extension version response:{"hasSupport":false,"version":"0.1.6","changeNotes":"<div> <p>Release Date: 09 Oct, 2023 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2024-11-12 14:53:26 info: Current installed embold extension version : 0.1.8
+2024-11-12 14:53:26 info: Latest embold extension version on marketplace : 0.1.6
+2024-11-12 14:54:40 info: Row(s) deleted
+2024-11-12 14:54:40 info: Row(s) deleted
+2024-11-12 14:55:11 info: Congratulations, your extension "Embold" is now active!
+2024-11-12 14:55:11 info: tempDirectory : /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/temp
+2024-11-12 14:55:19 info: Extraction complete for source: /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/resources/embold-scanner-archive.zip, destination: /Users/pedriito/.vscode/extensions/embold-vscode.embold-0.1.8/temp
+2024-11-12 14:55:19 info: Extension installed on machine OS : darwin
+2024-11-12 14:55:19 info: Fetched the issues from DB
+2024-11-12 14:55:19 info: Embold extension version response:{"hasSupport":false,"version":"0.1.6","changeNotes":"<div> <p>Release Date: 09 Oct, 2023 <br><span>Bug fixes and improvements.</span></p> </div>"}
+2024-11-12 14:55:19 info: Current installed embold extension version : 0.1.8
+2024-11-12 14:55:19 info: Latest embold extension version on marketplace : 0.1.6
+2024-11-12 14:55:19 info: Java version installed on machine : 
+openjdk version "19.0.2" 2023-01-17
+OpenJDK Runtime Environment (build 19.0.2+7-44)
+OpenJDK 64-Bit Server VM (build 19.0.2+7-44, mixed mode, sharing)
+
+2024-11-12 14:55:19 info: Java installed on machine.
+2024-11-12 15:08:27 info: Row(s) deleted
+2024-11-12 15:08:27 info: Row(s) deleted

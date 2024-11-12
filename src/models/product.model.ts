@@ -44,6 +44,24 @@ export class Product extends Entity {
   })
   allergenes?:string[];
 
+  @property({
+    type:'array',
+    itemType:'string'
+  })
+  the?:string[];
+
+  @property({
+    type:'array',
+    itemType:'string'
+  })
+  perle?:string[];
+
+  @property({
+    type:'array',
+    itemType:'string'
+  })
+  parfum?:string[];
+
   @belongsTo(() => SubCategory)
   subCategoryId: string;
 
