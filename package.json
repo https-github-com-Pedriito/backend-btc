@@ -62,6 +62,7 @@
     "mongodb": "^6.9.0",
     "mongoose": "^8.7.1",
     "nodemailer": "^6.9.16",
+    "resend": "^4.0.1",
     "stripe": "^17.3.1",
     "tslib": "^2.0.0"
   },

@@ -13,6 +13,7 @@ import express, { Request, Response } from 'express';
 const nodemailer = require("nodemailer");
 import 'dotenv/config'
 import stripePackage from 'stripe';
+import { Resend } from 'resend';
 
 require('dotenv').config();
 
@@ -98,29 +99,76 @@ export class BackendApplication extends BootMixin(
 
     // Endpoint for sending emails with Nodemailer
     expressApp.post('/send-email', async (req: Request, res: Response) => {
-      const { to, subject, text } = req.body;
-    
       try {
-        const transporter = nodemailer.createTransport({
-          host: 'smtp.gmail.com',
-          port: 465,
-          secure: false,
-          auth: {
-            user: process.env.GMAIL_ADDRESS,
-            pass: process.env.GMAIL_PASSWORD,
-          },
-        });
+        const { to, subject, cart } = req.body;
     
-        await transporter.sendMail({
-          from: process.env.GMAIL_ADDRESS,
-          to,
+        if (!to || !subject || !cart) {
+          return res.status(400).json({ error: 'Missing required fields: to, subject, cart' });
+        }
+    
+        const resend = new Resend(process.env.RESEND_API_KEY);
+    
+        // Construire le contenu HTML à partir du panier
+        const cartHtml = cart
+          .map((item: any) => {
+            let optionsHtml = '';
+            if (item.selectedOptions) {
+              optionsHtml = item.selectedOptions
+          .map((option: any) => `<li>Option: ${option}</li>`)
+          .join('');
+            }
+            let theHtml = '';
+            if (item.selectedThe) {
+              theHtml = item.selectedThe
+          .map((the: any) => `<li>Thé: ${the}</li>`)
+          .join('');
+            }
+            let perlesHtml = '';
+            if (item.selectedPerles) {
+              perlesHtml = item.selectedPerles
+          .map((perle: any) => `<li>Perles: ${perle}</li>`)
+          .join('');
+            }
+            let parfumsHtml = '';
+            if (item.selectedParfums) {
+              parfumsHtml = item.selectedParfums
+          .map((parfum: any) => `<li>Parfum: ${parfum}</li>`)
+          .join('');
+            }
+            return `
+              <li>
+          ${item.title} - ${item.quantity} x ${item.price}€
+          <ul>
+            ${optionsHtml}
+            ${theHtml}
+            ${perlesHtml}
+            ${parfumsHtml}
+          </ul>
+              </li>
+            `;
+          })
+          .join('');
+    
+        const emailContent = `
+          <h1>Récapitulatif de votre commande</h1>
+          <ul>${cartHtml}</ul>
+          <p>Total : ${cart.reduce((acc: number, item: any) => acc + item.price * item.quantity, 0)}€</p>
+        `;
+    
+        const { data, error } = await resend.emails.send({
+          from: 'Acme <onboarding@resend.dev>',
+          to: [to],
           subject,
-          text,
+          html: emailContent, // Utilise ton contenu HTML
         });
     
-        res.status(200).json({ message: 'Email envoyé avec succès' });
-      } catch (error) {
-        res.status(500).json({ message: 'Erreur lors de l\'envoi de l\'email', error });
+        if (error) {
+          return res.status(500).json({ error });
+        }
+    
+        res.status(200).json({ message: 'Email sent successfully', data });
+      } catch (error: any) {
+        res.status(500).json({ error: error.message });
       }
     });
 
