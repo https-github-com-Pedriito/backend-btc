@@ -80,7 +80,7 @@ export class BackendApplication extends BootMixin(
         const paymentIntent = await stripe.paymentIntents.create({
           amount: orderAmount,
           currency: 'eur',
-          automatic_payment_methods: { enabled: true },
+          payment_method_types: ['card' , 'sepa_debit','link', 'klarna','revolut_pay','paypal'],
         });
     
         res.send({ clientSecret: paymentIntent.client_secret });
